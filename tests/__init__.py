@@ -1,7 +1,7 @@
 from unittest import TestCase
 from app import create_app, models
 
-__all__ = [ "BaseTest" ]
+__all__ = [ "BaseTest", "defaults" ]
 
 
 class BaseTest( TestCase ):
@@ -21,3 +21,29 @@ class BaseTest( TestCase ):
         if self.auto_create:
             with self.app.app_context():
                 self.api.store.destroy_all()
+
+
+defaults = {
+    "app": {
+        "category": [
+            {
+                "description": "Operating System",
+                "id": 0,
+                "name": "OS",
+                "tag": "os"
+            },
+            {
+                "description": "Hypertext Transfer Protocol - Internet",
+                "id": 1,
+                "name": "HTTP",
+                "tag": "http"
+            },
+            {
+                "description": "Network firewall",
+                "id": 2,
+                "name": "Firewall",
+                "tag": "firewall"
+            }
+        ]
+    }
+}
