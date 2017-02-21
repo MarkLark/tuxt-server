@@ -7,7 +7,7 @@ env:
 install:
   - pip install -q Flask==$FLASK_VERSION
   - pip install -q -r requirements.txt
-  - pip install coveralls
+  - pip install -q -r dev-requirements.txt
 script:
   - nosetests -vs tests --with-coverage --cover-package=app
 after_success:
